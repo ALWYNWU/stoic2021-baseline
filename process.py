@@ -43,7 +43,7 @@ class StoicAlgorithm(MultiClassAlgorithm):
 
         # run model
         with torch.no_grad():
-            output = torch.sigmoid(self.model(input_image))
+            _, output = torch.sigmoid(self.model(input_image))
         prob_covid, prob_severe = unpack_single_output(output)
 
         return {
