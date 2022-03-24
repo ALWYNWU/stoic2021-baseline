@@ -37,7 +37,7 @@ class StoicAlgorithm(MultiClassAlgorithm):
 #         s1 = model.sigma1
 #         s2 = model.sigma2
         self.model = self.model.to(device)
-        self.model.load_state_dict(torch.load('./algorithm/best_1.0.pth', map_location=torch.device(device)))
+        self.model.load_state_dict(torch.load('./algorithm/model_covid_v2.0.pth', map_location=torch.device(device)))
         self.model = self.model.eval()
 
     def predict(self, *, input_image: SimpleITK.Image) -> Dict:
